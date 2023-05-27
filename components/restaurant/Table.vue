@@ -13,13 +13,21 @@ const restaurantsOrganized = {
         <h1>TOP 50: THE RANKING</h1>
         <div class="table-container">
             <div class="table-col">
-                <RestaurantRow v-for="restaurants in restaurantsOrganized.first"
+                <RestaurantRow :isHeader="true"/>
+                <RestaurantRow v-for="(restaurants, index) in restaurantsOrganized.first"
                                :key="restaurants.id"
+                               :name="restaurants.name"
+                               :rank="restaurants.rank"
+                               :index="index"
                 />
             </div>
             <div class="table-col">
-                <RestaurantRow v-for="restaurants in restaurantsOrganized.second"
+                <RestaurantRow :isHeader="true"/>
+                <RestaurantRow v-for="(restaurants, index) in restaurantsOrganized.second"
                                :key="restaurants.id"
+                               :name="restaurants.name"
+                               :rank="restaurants.rank"
+                               :index="index"
                 />
             </div>
         </div>
