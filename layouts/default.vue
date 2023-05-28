@@ -3,10 +3,11 @@
 </script>
 
 <template>
-  <div>
-      <Nav />
-      <slot />
-  </div>
+    <div class="bg-white">
+        <Nav/>
+        <slot/>
+        <Footer/>
+    </div>
 </template>
 
 <style scoped>
