@@ -4,9 +4,7 @@
 
 <template>
     <nav />
-    <div class="container">
         <RestaurantTable />
-    </div>
 </template>
 
 <style scoped>

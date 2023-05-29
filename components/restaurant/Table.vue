@@ -9,43 +9,84 @@ const restaurantsOrganized = {
 </script>
 
 <template>
-    <div class="container">
-        <h1>TOP 50: THE RANKING</h1>
-        <div class="row">
-            <div class="col-6">
-                <table class="table table-striped custom-table">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                    </tr>
-                    </thead>
-                    <RestaurantRow v-for="(restaurants, index) in restaurantsOrganized.first"
-                                   :key="restaurants.id"
-                                   :name="restaurants.name"
-                                   :rank="restaurants.rank"
-                                   :index="index"
-                    />
-                </table>
-            </div>
-            <div class="col-6">
-                <table class="table table-striped custom-table">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                    </tr>
-                    </thead>
+    <div class="bg-gray-900 grid grid-cols-2 gap-2">
+        <div class="py-10">
+            <h2 class="px-4 text-base font-semibold leading-7 text-white sm:px-6 lg:px-8">Latest activity</h2>
+            <table class="mt-6 w-full whitespace-nowrap text-left">
+                <colgroup>
+                    <col class="w-full sm:w-4/12"/>
+                    <col class="lg:w-4/12"/>
+                </colgroup>
+                <thead class="border-b border-white/10 text-sm leading-6 text-white">
+                <tr>
+                    <th scope="col" class="py-2 pl-0 pr-8 font-semibold sm:pl-6 lg:pl-8">name</th>
+                    <th scope="col" class="py-2 pl-4 pr-8 font-semibold sm:pl-6 lg:pl-8">Rank</th>
 
-                    <RestaurantRow v-for="(restaurants, index) in restaurantsOrganized.second"
-                                   :key="restaurants.id"
-                                   :name="restaurants.name"
-                                   :rank="restaurants.rank"
-                                   :index="index"
-                    />
+                </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                <tr v-for="restaurant in restaurantsOrganized.first" :key="restaurant.id">
+                    <td class="py-4 pl-4 pr-8 sm:pl-6 lg:pl-8">
+                        <div class="flex items-center gap-x-4">
+                            <img :src="restaurant.imageUrl" alt="" class="h-8 w-8 rounded-full bg-gray-800"/>
+                            <div class="flex gap-x-3">
+                                <div class="rounded-md bg-gray-700/40 px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-white/10">
+                                    <NuxtLink :href="`/restaurants/${restaurant.name}`" class="link">{{ restaurant.name }}</NuxtLink>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="py-4 pl-4 pr-8 sm:pl-6 lg:pl-8">
+                        <div class="flex items-center gap-x-4">
+                            <div class="flex gap-x-3">
+                                <div class="rounded-md bg-gray-700/40 px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-white/10">
+                                    {{ restaurant.rank }}
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="py-10">
+            <h2 class="px-4 text-base font-semibold leading-7 text-white sm:px-6 lg:px-8">Latest activity</h2>
+            <table class="mt-6 w-full whitespace-nowrap text-left">
+                <colgroup>
+                    <col class="w-full sm:w-4/12"/>
+                    <col class="lg:w-4/12"/>
+                </colgroup>
+                <thead class="border-b border-white/10 text-sm leading-6 text-white">
+                <tr>
+                    <th scope="col" class="py-2 pl-0 pr-8 font-semibold sm:pl-6 lg:pl-8">name</th>
+                    <th scope="col" class="py-2 pl-4 pr-8 font-semibold sm:pl-6 lg:pl-8">Rank</th>
 
-                </table>
-            </div>
+                </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                <tr v-for="restaurant in restaurantsOrganized.second" :key="restaurant.id">
+                    <td class="py-4 pl-4 pr-8 sm:pl-6 lg:pl-8">
+                        <div class="flex items-center gap-x-4">
+                            <img :src="restaurant.imageUrl" alt="" class="h-8 w-8 rounded-full bg-gray-800"/>
+                            <div class="flex gap-x-3">
+                                <div class="rounded-md bg-gray-700/40 px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-white/10">
+                                    <NuxtLink :href="`/restaurants/${restaurant.name}`" class="link">{{ restaurant.name }}</NuxtLink>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="py-4 pl-4 pr-8 sm:pl-6 lg:pl-8">
+                        <div class="flex items-center gap-x-4">
+                            <div class="flex gap-x-3">
+                                <div class="rounded-md bg-gray-700/40 px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-white/10">
+                                    {{ restaurant.rank }}
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </template>
