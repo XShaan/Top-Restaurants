@@ -31,7 +31,7 @@ const restaurantsOrganized = {
                             <img :src="restaurant.imageUrl" alt="" class="h-8 w-8 rounded-full bg-gray-800"/>
                             <div class="flex gap-x-3">
                                 <div class="rounded-md bg-gray-700/40 px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-white/10">
-                                    <NuxtLink :href="`/restaurants/${restaurant.name}`" class="link">{{ restaurant.name }}</NuxtLink>
+                                    <a :href="`/restaurants/${restaurant.name}`" class="link">{{ restaurant.name }}</a>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +70,7 @@ const restaurantsOrganized = {
                             <img :src="restaurant.imageUrl" alt="" class="h-8 w-8 rounded-full bg-gray-800"/>
                             <div class="flex gap-x-3">
                                 <div class="rounded-md bg-gray-700/40 px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-white/10">
-                                    <NuxtLink :href="`/restaurants/${restaurant.name}`" class="link">{{ restaurant.name }}</NuxtLink>
+                                    <a :href="`/restaurants/${restaurant.name}`" class="link">{{ restaurant.name }}</a>
                                 </div>
                             </div>
                         </div>
